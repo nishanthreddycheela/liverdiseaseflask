@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Liver Disease Prediction</h2>
+        <p>Enter the required values below and click "Predict" to check for liver disease.</p>
+
+        <form action="/predict" method="post">
+            <label>Age:</label>
+            <input type="text" name="feature1" placeholder="Enter Age" required>
+
+            <label>Sex (0 = Male, 1 = Female):</label>
+            <input type="text" name="feature2" placeholder="Enter Sex (0 or 1)" required>
+
+            <label>Albumin Level:</label>
+            <input type="text" name="feature3" placeholder="Enter Albumin Level" required>
+
+            <label>Alkaline Phosphatase:</label>
+            <input type="text" name="feature4" placeholder="Enter Alkaline Phosphatase" required>
+
+            <label>Alanine Aminotransferase:</label>
+            <input type="text" name="feature5" placeholder="Enter Alanine Aminotransferase" required>
+
+            <label>Aspartate Aminotransferase:</label>
+            <input type="text" name="feature6" placeholder="Enter Aspartate Aminotransferase" required>
+
+            <label>Bilirubin Level:</label>
+            <input type="text" name="feature7" placeholder="Enter Bilirubin Level" required>
+
+            <label>Cholinesterase:</label>
+            <input type="text" name="feature8" placeholder="Enter Cholinesterase Level" required>
+
+            <label>Cholesterol Level:</label>
+            <input type="text" name="feature9" placeholder="Enter Cholesterol Level" required>
+
+            <label>Creatinine Level:</label>
+            <input type="text" name="feature10" placeholder="Enter Creatinine Level" required>
+
+            <label>Gamma Glutamyl Transferase:</label>
+            <input type="text" name="feature11" placeholder="Enter Gamma Glutamyl Transferase" required>
+
+            <label>Protein Level:</label>
+            <input type="text" name="feature12" placeholder="Enter Protein Level" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
